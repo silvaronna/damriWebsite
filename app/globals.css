@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom font classes for specific sizes */
+.text-header {
+  font-size: 14px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.text-nav {
+  font-size: 16px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.text-service-title {
+  font-size: 32px;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-weight: 600;
+}
+
+.text-service-desc {
+  font-size: 16px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
+
+.text-submenu {
+  font-size: 16px;
+  font-family: system-ui, -apple-system, sans-serif;
+}
