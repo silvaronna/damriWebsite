@@ -2,7 +2,7 @@
 
 ![image](https://github.com/user-attachments/assets/18f1165f-5759-439a-a894-998f54173e7f)
 
-Pembuatan ulang (redesign) website DAMRI menggunakan framework **Next.js** sebagai tugas proyek pengembangan web klien dari mahasiswa Universitas Cakrawala.
+Pembuatan ulang (redesign) website DAMRI menggunakan framework **Next.js** sebagai project Web Client Development dari mahasiswa Universitas Cakrawala.
 
 ## 📌 Deskripsi Proyek
 
@@ -16,9 +16,7 @@ Proyek ini dikembangkan oleh mahasiswa program studi **Teknik Informatika** dari
 
 - [Next.js](https://nextjs.org/) – React Framework untuk server-side rendering dan routing
 - [Tailwind CSS](https://tailwindcss.com/) – Utility-first CSS framework
-- [TypeScript](https://www.typescriptlang.org/) *(opsional jika digunakan)*
-- [Lucide Icons](https://lucide.dev/) *(jika menggunakan ikon)*
-- [Vercel](https://vercel.com/) *(untuk deployment, jika digunakan)*
+- [TypeScript](https://www.typescriptlang.org/)
 
 ## 📦 Cara Menjalankan:
 
