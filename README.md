@@ -27,3 +27,9 @@ git clone https://github.com/username/damri-website.git
 cd damri-website
 npm install
 npm run dev
+```
+
+### Kontributor:
+- Azka Abdillah
+🔹 Menambahkan fitur opsi translate bahasa Indonesia dan Inggris
+🔹 Melakukan penyesuaian layout grid untuk konsistensi tampilan halaman
