@@ -1,6 +1,6 @@
 # 🚍 DAMRI Website Redesign (Next.js)
 
-![image](https://github.com/user-attachments/assets/d4450dfc-15c6-4137-884e-2c9e3c5d0972)
+![image](https://github.com/user-attachments/assets/18f1165f-5759-439a-a894-998f54173e7f)
 
 Pembuatan ulang (redesign) website DAMRI menggunakan framework **Next.js** sebagai tugas proyek pengembangan web klien dari mahasiswa Universitas Cakrawala.
 
