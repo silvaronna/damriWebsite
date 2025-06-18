@@ -1,35 +1,40 @@
+"use client"
+
 import Image from "next/image"
 import { DropdownMenu } from "./dropdown-menu"
-
-const tentangKamiItems = [
-  { label: "Profil Perusahaan", href: "/tentang/profil" },
-  { label: "Visi & Misi", href: "/tentang/visi-misi" },
-  { label: "Sejarah", href: "/tentang/sejarah" },
-  { label: "Struktur Organisasi", href: "/tentang/struktur" },
-  { label: "Direksi", href: "/tentang/direksi" },
-  { label: "Penghargaan", href: "/tentang/penghargaan" },
-]
-
-const segmentasiLayananItems = [
-  { label: "Angkutan Kota", href: "/layanan/angkutan-kota" },
-  { label: "Angkutan Antar Kota", href: "/layanan/antar-kota" },
-  { label: "Angkutan Lintas Batas", href: "/layanan/lintas-batas" },
-  { label: "Angkutan Bandara", href: "/layanan/bandara" },
-  { label: "Angkutan Pariwisata", href: "/layanan/pariwisata" },
-  { label: "Angkutan Logistik", href: "/layanan/logistik" },
-  { label: "Angkutan Perintis", href: "/layanan/perintis" },
-]
-
-const publikasiItems = [
-  { label: "Berita Terkini", href: "/publikasi/berita" },
-  { label: "Siaran Pers", href: "/publikasi/siaran-pers" },
-  { label: "Laporan Tahunan", href: "/publikasi/laporan" },
-  { label: "Majalah DAMRI", href: "/publikasi/majalah" },
-  { label: "Galeri Foto", href: "/publikasi/galeri" },
-  { label: "Video", href: "/publikasi/video" },
-]
+import { useLanguage } from "@/context/language-context"
 
 export function Navigation() {
+  const { t } = useLanguage()
+
+  const tentangKamiItems = [
+    { label: t.about.companyProfile, href: "/tentang/profil" },
+    { label: t.about.visionMission, href: "/tentang/visi-misi" },
+    { label: t.about.history, href: "/tentang/sejarah" },
+    { label: t.about.organization, href: "/tentang/struktur" },
+    { label: t.about.directors, href: "/tentang/direksi" },
+    { label: t.about.awards, href: "/tentang/penghargaan" },
+  ]
+
+  const segmentasiLayananItems = [
+    { label: t.services.cityTransport, href: "/layanan/angkutan-kota" },
+    { label: t.services.intercityTransport, href: "/layanan/antar-kota" },
+    { label: t.services.crossBorderTransport, href: "/layanan/lintas-batas" },
+    { label: t.services.airportTransport, href: "/layanan/bandara" },
+    { label: t.services.tourismTransport, href: "/layanan/pariwisata" },
+    { label: t.services.logisticsTransport, href: "/layanan/logistik" },
+    { label: t.services.pioneerTransport, href: "/layanan/perintis" },
+  ]
+
+  const publikasiItems = [
+    { label: t.publications.news, href: "/publikasi/berita" },
+    { label: t.publications.pressRelease, href: "/publikasi/siaran-pers" },
+    { label: t.publications.annualReport, href: "/publikasi/laporan" },
+    { label: t.publications.magazine, href: "/publikasi/majalah" },
+    { label: t.publications.gallery, href: "/publikasi/galeri" },
+    { label: t.publications.video, href: "/publikasi/video" },
+  ]
+
   return (
     <nav className="bg-white shadow-sm">
       <div className="container mx-auto px-4">
@@ -49,15 +54,15 @@ export function Navigation() {
 
           <div className="flex items-center space-x-8">
             <a href="/" className="text-nav text-gray-700 hover:text-damri-blue transition-colors">
-              Beranda
+              {t.nav.home}
             </a>
 
-            <DropdownMenu title="Tentang Kami" items={tentangKamiItems} />
-            <DropdownMenu title="Segmentasi Layanan" items={segmentasiLayananItems} />
-            <DropdownMenu title="Publikasi" items={publikasiItems} />
+            <DropdownMenu title={t.nav.about} items={tentangKamiItems} />
+            <DropdownMenu title={t.nav.services} items={segmentasiLayananItems} />
+            <DropdownMenu title={t.nav.publications} items={publikasiItems} />
 
             <a href="/kontak" className="text-nav text-gray-700 hover:text-damri-blue transition-colors">
-              Kontak
+              {t.nav.contact}
             </a>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import "./globals.css"
+import { LanguageProvider } from "@/context/language-context"
 
 export const metadata: Metadata = {
   title: "DAMRI - Perusahaan Umum DAMRI",
@@ -19,7 +20,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="id">
-      <body>{children}</body>
+      <body>
+        <LanguageProvider>{children}</LanguageProvider>
+      </body>
     </html>
   )
 }

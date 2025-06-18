@@ -1,4 +1,5 @@
 import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react"
+import { LanguageSwitcher } from "./language-switcher"
 
 export function Header() {
   return (
@@ -17,10 +18,7 @@ export function Header() {
               <Instagram className="w-4 h-4 text-gray-400 hover:text-damri-blue cursor-pointer" />
               <Linkedin className="w-4 h-4 text-gray-400 hover:text-damri-blue cursor-pointer" />
             </div>
-            <select className="text-header text-gray-600 bg-transparent border-none">
-              <option>ID</option>
-              <option>EN</option>
-            </select>
+            <LanguageSwitcher />
           </div>
         </div>
       </div>
