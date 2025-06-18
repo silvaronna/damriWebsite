@@ -30,6 +30,6 @@ npm run dev
 ```
 
 ### Kontributor:
-- Azka Abdillah
-🔹 Menambahkan fitur opsi translate bahasa Indonesia dan Inggris
-🔹 Melakukan penyesuaian layout grid untuk konsistensi tampilan halaman
+1. Azka Abdillah
+- Menambahkan fitur opsi translate bahasa Indonesia dan Inggris
+- Melakukan penyesuaian layout grid untuk konsistensi tampilan halaman
