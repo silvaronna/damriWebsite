@@ -2,6 +2,8 @@ import type React from "react"
 import type { Metadata } from "next"
 import "./globals.css"
 import { LanguageProvider } from "@/context/language-context"
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 
 export const metadata: Metadata = {
   title: "DAMRI - Perusahaan Umum DAMRI",

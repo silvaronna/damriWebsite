@@ -1,0 +1,188 @@
+
+
+/*===================================
+====== News-section.module.css ======
+=====================================*/
+.newscontainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.news-carousel-wrapper {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #f0f0f0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  position: relative;
+}
+
+.news-carousel {
+  display: flex;
+  gap: 20px;
+  padding: 20px 0;
+  animation: scroll-left 20s linear infinite;
+  margin-bottom: 0;
+  width: calc(200%); 
+}
+
+.news-carousel img {
+  flex-shrink: 0;
+  width: 200%;
+  max-width: 600px;
+  min-width: 400px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.news-carousel img {
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.news-carousel img:hover {
+  transform: scale(1.05);
+  z-index: 10;
+}
+
+.news-slide-item {
+  flex-shrink: 0;
+  width: 12.5%;
+  user-select: none;
+}
+
+.news-slide-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 1024px) {
+  .news-carousel img {
+    max-width: 600px;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 600px) {
+.news-carousel-wrapper {
+    max-width: 100%;
+  }
+
+.news-carousel img {
+    max-width: 400px;
+    border-radius: 10px;
+  }
+}
+
+/*=================================
+======== Footer.module.css ========
+===================================*/
+.footer-container {
+  background-color: #224d8f;
+  opacity: 0;
+  transform: translateY(10px);
+  transition-property: opacity, transform;
+  transition-duration: 700ms;
+  transition-timing-function: ease-out;
+}
+
+.footer-container.opacity-100 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.menu-section {
+  margin-left: 40px;
+}
+
+.social-icon {
+  border: 1px solid white;
+  border-radius: 9999px;
+  padding: 0.5rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  color: white;
+}
+
+.social-icon:hover {
+  background-color: white;
+  color: #224d8f;
+}
+
+.footer-logo-section {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 112rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.logo-bumn, .logo-damri {
+  height: 2rem;
+}
+
+.footer-bottom {
+  background-color: #224d8f;
+  margin-left: 1rem;
+}
+
+@media (min-width: 1024px) {
+.footer-bottom {
+    padding-left: 0.5rem;
+    padding-right: 4rem;
+  }
+}
+
+@media (min-width: 768px) {
+.logo-bumn {
+    height: 3rem;
+  }
+}
+
+.logo-damri {
+  height: 2rem;
+}
+
+.footer-bottom {
+    margin-left: 4rem;
+  }
+
+@media (min-width: 640px) {
+
+.menu-section {
+    margin-left: 16px;
+  }
+.logo-bumn {
+    height: 2.5rem;
+  }
+}
+.footer-bottom {
+    margin-left: 3rem;
+  }
