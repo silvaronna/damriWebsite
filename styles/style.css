@@ -3,26 +3,25 @@
 /*===================================
 ====== News-section.module.css ======
 =====================================*/
-.newscontainer {
+.news-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 20px auto 0;
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  margin-top: 10px;
+  background-color: transparent;
 }
+
 .news-carousel-wrapper {
   width: 100%;
   overflow: hidden;
   border-radius: 8px;
-  border: 1px solid #ccc;
-  background-color: #f0f0f0;
-  margin: 0 auto;
+  border: 0px solid #ccc;
+  background-color: transparent;
+  margin: auto;
   display: flex;
   justify-content: center;
-  margin-top: 30px;
   position: relative;
 }
 
@@ -30,14 +29,13 @@
   display: flex;
   gap: 20px;
   padding: 20px 0;
-  animation: scroll-left 20s linear infinite;
+  animation: scroll-left 24s linear infinite;
+  width: calc(100% * 3);
   margin-bottom: 0;
-  width: calc(200%); 
 }
 
 .news-carousel img {
   flex-shrink: 0;
-  width: 200%;
   max-width: 600px;
   min-width: 400px;
   height: auto;
@@ -45,11 +43,8 @@
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-}
-
-.news-carousel img {
+  margin: 20px;
   transition: transform 0.3s ease;
-  cursor: pointer;
 }
 
 .news-carousel img:hover {
@@ -61,6 +56,10 @@
   flex-shrink: 0;
   width: 12.5%;
   user-select: none;
+  padding: 0 8px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
 .news-slide-item img {
@@ -78,23 +77,26 @@
   }
 }
 
+/* Tablet: 4 slide per view */
 @media (max-width: 1024px) {
-  .news-carousel img {
-    max-width: 600px;
-    border-radius: 12px;
+  .news-slide-item {
+    width: calc(100% / 8);
+  }
+  .news-carousel {
+    animation-duration: 16s;
   }
 }
 
-@media (max-width: 600px) {
-.news-carousel-wrapper {
-    max-width: 100%;
+/* Mobile: 2 gambar tampak */
+@media (max-width: 640px) {
+  .news-slide-item {
+    width: calc(100% / 8);
   }
-
-.news-carousel img {
-    max-width: 400px;
-    border-radius: 10px;
+  .news-carousel {
+    animation-duration: 12s;
   }
 }
+
 
 /*=================================
 ======== Footer.module.css ========
