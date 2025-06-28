@@ -4,7 +4,7 @@ import { LanguageSwitcher } from "./language-switcher"
 export function Header() {
   return (
     <div className="bg-white border-b border-gray-200">
-      <div className="container mx-auto px-4">
+      <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
         <div className="flex justify-between items-center py-3">
           <div className="flex items-center gap-8">
             <span className="text-header text-gray-600">(021) 1500 825</span>

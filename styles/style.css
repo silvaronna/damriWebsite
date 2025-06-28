@@ -1,14 +1,12 @@
-
-
 /*===================================
 ====== News-section.module.css ======
 =====================================*/
 .news-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 20px auto 0;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin: 0;
   width: 100%;
   background-color: transparent;
 }
@@ -97,7 +95,6 @@
   }
 }
 
-
 /*=================================
 ======== Footer.module.css ========
 ===================================*/
@@ -115,10 +112,6 @@
   transform: translateY(0);
 }
 
-.menu-section {
-  margin-left: 40px;
-}
-
 .social-icon {
   border: 1px solid white;
   border-radius: 9999px;
@@ -134,57 +127,28 @@
 
 .footer-logo-section {
   background-color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 112rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 3rem;
-  padding-right: 3rem;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
 }
 
-.logo-bumn, .logo-damri {
-  height: 2rem;
-}
-
-.footer-bottom {
-  background-color: #224d8f;
-  margin-left: 1rem;
-}
-
-@media (min-width: 1024px) {
-.footer-bottom {
-    padding-left: 0.5rem;
-    padding-right: 4rem;
-  }
-}
-
-@media (min-width: 768px) {
-.logo-bumn {
-    height: 3rem;
-  }
-}
-
+.logo-bumn,
 .logo-damri {
   height: 2rem;
 }
 
 .footer-bottom {
-    margin-left: 4rem;
+  background-color: #224d8f;
+}
+
+@media (min-width: 768px) {
+  .logo-bumn {
+    height: 3rem;
   }
+}
 
 @media (min-width: 640px) {
-
-.menu-section {
-    margin-left: 16px;
-  }
-.logo-bumn {
+  .logo-bumn {
     height: 2.5rem;
   }
 }
 .footer-bottom {
-    margin-left: 3rem;
-  }
+  margin-left: 3rem;
+}

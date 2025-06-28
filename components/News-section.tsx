@@ -1,8 +1,8 @@
-"use client";
+"use client"
 
-import React from "react";
-import "/styles/style.css";
-import "/styles/globals.css";
+import type React from "react"
+import "/styles/style.css"
+import "/styles/globals.css"
 
 const newsItems = [
   {
@@ -37,38 +37,30 @@ const newsItems = [
     src: "/images/News8.png",
     link: "https://www.damri.co.id/berita/damri-kedatangan-70-unit-bus-listrik-siap-dioperasikan-akhir-bulan-juni",
   },
-];
+]
 
-const doubledNewsItems = [...newsItems, ...newsItems];
+const doubledNewsItems = [...newsItems, ...newsItems]
 
 const NewsSection: React.FC = () => {
   return (
-    <section className="py-20 bg-white">
-      <div className="news-container">
-        <div className="container mx-auto px-4">
-          <h2 className="text-service-title text-gray-900 font-semibold leading-tight mb-4">
-            Berita Terbaru
-          </h2>
-        </div>
+    <section className="py-24 bg-white">
+      <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
+        <div className="news-container">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-12">Berita Terbaru</h2>
 
-        <div className="news-carousel-wrapper">
-          <div className="news-carousel">
-            {doubledNewsItems.map(({ src, link }, index) => (
-              <a
-                key={index}
-                className="news-slide-item"
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img src={src} alt={`Berita ${index + 1}`} loading="lazy" />
-              </a>
-            ))}
+          <div className="news-carousel-wrapper">
+            <div className="news-carousel">
+              {doubledNewsItems.map(({ src, link }, index) => (
+                <a key={index} className="news-slide-item" href={link} target="_blank" rel="noopener noreferrer">
+                  <img src={src || "/placeholder.svg"} alt={`Berita ${index + 1}`} loading="lazy" />
+                </a>
+              ))}
+            </div>
           </div>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default NewsSection;
+export default NewsSection

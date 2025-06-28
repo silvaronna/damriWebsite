@@ -37,22 +37,22 @@ export function Navigation() {
 
   return (
     <nav className="bg-white shadow-sm">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between py-4">
+      <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
+        <div className="flex items-center justify-between py-6">
           <div className="flex items-center">
             <a href="/" className="flex items-center">
               <Image
                 src="/images/damri-logo.png"
                 alt="DAMRI Logo"
-                width={120}
-                height={40}
-                className="h-10 w-auto"
+                width={140}
+                height={45}
+                className="h-12 w-auto"
                 priority
               />
             </a>
           </div>
 
-          <div className="flex items-center space-x-8">
+          <div className="flex items-center space-x-10">
             <a href="/" className="text-nav text-gray-700 hover:text-damri-blue transition-colors">
               {t.nav.home}
             </a>
