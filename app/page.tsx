@@ -1,7 +1,7 @@
 import { Header } from "@/components/header"
 import { Navigation } from "@/components/navigation"
 import { HeroSection } from "@/components/hero-section"
-import { ServicesSection } from "@/components/services-section"
+import ServicesSection from "@/components/services-section"
 import NewsSection from "@/components/News-section"
 import Footer from "@/components/Footer"
 
@@ -15,5 +15,5 @@ export default function Home() {
       <NewsSection />
       <Footer />
     </main>
-  )
+  );
 }
