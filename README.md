@@ -31,3 +31,11 @@ npm run dev
 1. Azka Abdillah
 - Menambahkan fitur opsi translate bahasa Indonesia dan Inggris
 - Melakukan penyesuaian layout grid untuk konsistensi tampilan halaman
+2. Dendi Rivaldi
+- Mengembangkan sistem pemesanan tiket terintegrasi dengan fitur:
+  - Antarmuka responsif untuk semua perangkat
+  - Pilihan rute dan jadwal secara real-time
+  - Formulir pemesanan dengan validasi lengkap
+  - Konfirmasi pemesanan yang informatif
+  - Animasi dan transisi yang halus
+  - Manajemen state yang efisien untuk pengalaman pengguna yang lancar
