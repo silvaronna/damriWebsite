@@ -31,6 +31,10 @@ export interface Translations {
     logisticsTransport: string
     pioneerTransport: string
   }
+  news: {
+    title: string
+    description: string
+  }
   publications: {
     news: string
     pressRelease: string
@@ -47,6 +51,40 @@ export interface Translations {
     with: string
     apps: string
     download: string
+  }
+  download: {
+    title: string
+    description: string
+    appStore: string
+    googlePlay: string
+    downloadNow: string
+  }
+  footer: {
+    contact: string
+    needHelp: string
+    helpCenter: string
+    whatsappBusiness: string
+    email: string
+    headOffice: string
+    address: string
+    aboutUs: string
+    companyProfile: string
+    companyInfo: string
+    informationDisclosure: string
+    goodsServices: string
+    services: string
+    businessSegments: string
+    serviceStandards: string
+    governance: string
+    policies: string
+    isoCertificate: string
+    gcgScore: string
+    financialReports: string
+    mediaPublications: string
+    news: string
+    pressRelease: string
+    internalMagazine: string
+    copyright: string
   }
 }
 
@@ -72,9 +110,9 @@ export const translations: Record<Language, Translations> = {
       awards: "Penghargaan",
     },
     services: {
-      title: "Layanan",
+      title: "Layanan Kami",
       description:
-        "Saat ini Perum Damri memiliki 7 Layanan dengan tujuan untuk meningkatkan kinerja layanan perusahaan diantaranya sebagai berikut:",
+        "DAMRI menyediakan berbagai layanan transportasi untuk memenuhi kebutuhan perjalanan Anda, mulai dari angkutan kota hingga pariwisata.",
       cityTransport: "Angkutan Kota",
       intercityTransport: "Angkutan Antar Kota",
       crossBorderTransport: "Angkutan Lintas Batas",
@@ -82,6 +120,11 @@ export const translations: Record<Language, Translations> = {
       tourismTransport: "Angkutan Pariwisata",
       logisticsTransport: "Angkutan Logistik",
       pioneerTransport: "Angkutan Perintis",
+    },
+    news: {
+      title: "Berita Terbaru",
+      description:
+        "Ikuti perkembangan terkini seputar layanan DAMRI, inovasi transportasi, dan berbagai program unggulan yang kami hadirkan untuk masyarakat Indonesia.",
     },
     publications: {
       news: "Berita Terkini",
@@ -99,6 +142,42 @@ export const translations: Record<Language, Translations> = {
       with: "dengan",
       apps: "DAMRI Apps",
       download: "Download Now!",
+    },
+    download: {
+      title: "Download & Enjoy",
+      description:
+        "Unduh aplikasi kami untuk cara tercepat dan ternyaman untuk memesan tiket Bus Damri. Kemudahan yang akan anda dapatkan jika menginstall Damri apps di Playstore.",
+      appStore: "App Store",
+      googlePlay: "Google Play",
+      downloadNow: "Download Now",
+    },
+    footer: {
+      contact: "Kontak Kami",
+      needHelp: "Butuh bantuan?",
+      helpCenter: "Pusat bantuan",
+      whatsappBusiness: "Whatsapp Business",
+      email: "Email",
+      headOffice: "Kantor Pusat",
+      address:
+        "Jln. Matraman Raya No 25, Desa/Kelurahan Palmeriam Kec. Matraman, Kota Adm Jakarta Timur, Provinsi DKI Jakarta, 13140",
+      aboutUs: "Tentang Kami",
+      companyProfile: "Profil Perusahaan",
+      companyInfo: "Informasi Perusahaan",
+      informationDisclosure: "Keterbukaan Informasi",
+      goodsServices: "Barang dan Jasa",
+      services: "Layanan",
+      businessSegments: "Segmen Usaha",
+      serviceStandards: "Standar Pelayanan",
+      governance: "Tata Kelola Perusahaan",
+      policies: "Pedoman & Kebijakan",
+      isoCertificate: "Sertifikat ISO",
+      gcgScore: "Score GCG",
+      financialReports: "Laporan Keuangan",
+      mediaPublications: "Media dan Publikasi",
+      news: "Berita",
+      pressRelease: "Siaran Pers",
+      internalMagazine: "Majalah Internal",
+      copyright: "© 2025 DAMRI . All rights reserved",
     },
   },
   en: {
@@ -122,9 +201,9 @@ export const translations: Record<Language, Translations> = {
       awards: "Awards",
     },
     services: {
-      title: "Services",
+      title: "Our Services",
       description:
-        "Currently, Perum Damri has 7 Services with the aim of improving the company's service performance, including the following:",
+        "DAMRI provides various transportation services to meet your travel needs, from city transport to tourism.",
       cityTransport: "City Transport",
       intercityTransport: "Intercity Transport",
       crossBorderTransport: "Cross Border Transport",
@@ -132,6 +211,11 @@ export const translations: Record<Language, Translations> = {
       tourismTransport: "Tourism Transport",
       logisticsTransport: "Logistics Transport",
       pioneerTransport: "Pioneer Transport",
+    },
+    news: {
+      title: "Latest News",
+      description:
+        "Stay updated with the latest developments around DAMRI services, transportation innovations, and various flagship programs we present for the Indonesian people.",
     },
     publications: {
       news: "Latest News",
@@ -149,6 +233,42 @@ export const translations: Record<Language, Translations> = {
       with: "with",
       apps: "DAMRI Apps",
       download: "Download Now!",
+    },
+    download: {
+      title: "Download & Enjoy",
+      description:
+        "Download our app for the fastest and most comfortable way to book Damri Bus tickets. The convenience you will get if you install the Damri app on Playstore.",
+      appStore: "App Store",
+      googlePlay: "Google Play",
+      downloadNow: "Download Now",
+    },
+    footer: {
+      contact: "Contact Us",
+      needHelp: "Need help?",
+      helpCenter: "Help center",
+      whatsappBusiness: "Whatsapp Business",
+      email: "Email",
+      headOffice: "Head Office",
+      address:
+        "Jln. Matraman Raya No 25, Palmeriam Village, Matraman District, East Jakarta Administrative City, DKI Jakarta Province, 13140",
+      aboutUs: "About Us",
+      companyProfile: "Company Profile",
+      companyInfo: "Company Information",
+      informationDisclosure: "Information Disclosure",
+      goodsServices: "Goods and Services",
+      services: "Services",
+      businessSegments: "Business Segments",
+      serviceStandards: "Service Standards",
+      governance: "Corporate Governance",
+      policies: "Guidelines & Policies",
+      isoCertificate: "ISO Certificate",
+      gcgScore: "GCG Score",
+      financialReports: "Financial Reports",
+      mediaPublications: "Media and Publications",
+      news: "News",
+      pressRelease: "Press Release",
+      internalMagazine: "Internal Magazine",
+      copyright: "© 2025 DAMRI . All rights reserved",
     },
   },
 }

@@ -1,6 +1,7 @@
 "use client"
 
 import type React from "react"
+import { useLanguage } from "@/context/language-context"
 import "/styles/style.css"
 import "/styles/globals.css"
 
@@ -42,17 +43,22 @@ const newsItems = [
 const doubledNewsItems = [...newsItems, ...newsItems]
 
 const NewsSection: React.FC = () => {
+  const { t } = useLanguage()
+
   return (
     <section className="py-24 bg-white">
       <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
         <div className="news-container">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-12">Berita Terbaru</h2>
+          <div className="text-left mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">{t.news.title}</h2>
+            <p className="text-xl text-gray-600 max-w-4xl leading-relaxed">{t.news.description}</p>
+          </div>
 
           <div className="news-carousel-wrapper">
             <div className="news-carousel">
               {doubledNewsItems.map(({ src, link }, index) => (
                 <a key={index} className="news-slide-item" href={link} target="_blank" rel="noopener noreferrer">
-                  <img src={src || "/placeholder.svg"} alt={`Berita ${index + 1}`} loading="lazy" />
+                  <img src={src || "/placeholder.svg"} alt={`${t.news.title} ${index + 1}`} loading="lazy" />
                 </a>
               ))}
             </div>

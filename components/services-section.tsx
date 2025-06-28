@@ -8,9 +8,11 @@ import { services } from "@/lib/data"
 import type { ServiceItem } from "@/lib/types"
 import { ServiceCard } from "./ServiceCard"
 import { ServiceModal } from "./ServiceModal"
+import { useLanguage } from "@/context/language-context"
 
 const ServicesSection = () => {
   const [selectedService, setSelectedService] = useState<ServiceItem | null>(null)
+  const { t } = useLanguage()
 
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, amount: 0.2 })
@@ -33,13 +35,10 @@ const ServicesSection = () => {
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-left mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">Layanan Kami</h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            DAMRI menyediakan berbagai layanan transportasi untuk memenuhi kebutuhan perjalanan Anda, mulai dari
-            angkutan kota hingga pariwisata.
-          </p>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">{t.services.title}</h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-4xl leading-relaxed">{t.services.description}</p>
         </motion.div>
 
         <motion.div
