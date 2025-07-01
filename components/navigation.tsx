@@ -12,29 +12,6 @@ export function Navigation() {
 
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-// const contacts = [
-//   {
-//     name: "Cabang Banda Aceh",
-//     address: "Jln. Twk. Hasyim Bantamuda No.24, Banda Aceh",
-//     phone: "0651 635586",
-//     email: "cabang.aceh@damri.co.id",
-//   },
-//   {
-//     name: "Cabang Medan",
-//     address: "Jln. Raya Tg. Morawa Km. 10, Medan",
-//     phone: "061 7865466",
-//     email: "cabang.medan@damri.co.id",
-//   },
-//   {
-//     name: "Cabang Padang",
-//     address: "Jln. Parak Anau (Wisma Indah Parupuk), Padang",
-//     phone: "0751 7052137",
-//     email: "cabang.padang@damri.co.id",
-//   },
-//   // Tambahkan kontak lainnya sesuai kebutuhan...
-// ]
-
-
   const tentangKamiItems = [
     { label: t.about.companyProfile, href: "/tentang/profil" },
     { label: t.about.visionMission, href: "/tentang/visi-misi" },
@@ -110,13 +87,3 @@ export function Navigation() {
    </>
 )
 }
-
-            /* <a href="/kontak" className="text-nav text-gray-700 hover:text-damri-blue transition-colors">
-              {t.nav.contact}
-            </a>
-          </div>
-        </div>
-      </div>
-    </nav>
-  )
-} */
