@@ -32,13 +32,8 @@ npm run dev
 - Menambahkan fitur opsi translate bahasa Indonesia dan Inggris
 - Melakukan penyesuaian layout grid untuk konsistensi tampilan halaman
 2. Dendi Rivaldi
-- Mengembangkan sistem pemesanan tiket terintegrasi dengan fitur:
-  - Antarmuka responsif untuk semua perangkat
-  - Pilihan rute dan jadwal secara real-time
-  - Formulir pemesanan dengan validasi lengkap
-  - Konfirmasi pemesanan yang informatif
-  - Animasi dan transisi yang halus
-  - Manajemen state yang efisien untuk pengalaman pengguna yang lancar
+- Mengembangkan sistem pemesanan tiket yang terintegrasi dan interaktif.
+- Membuat fitur filter dan urutan layanan untuk memudahkan pencarian berdasarkan kategori dan harga.
 3. Emerald Alphante Reirezqi
 - Membuat tampilan baru pada menu berita dengan Carousel
 - Membuat fitur pencarian pada kontak cabang DAMRI dan merubah tampilan kontak menjadi lebih minimalis
