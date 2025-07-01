@@ -75,7 +75,6 @@
   }
 }
 
-/* Tablet: 4 slide per view */
 @media (max-width: 1024px) {
   .news-slide-item {
     width: calc(100% / 8);
@@ -85,7 +84,6 @@
   }
 }
 
-/* Mobile: 2 gambar tampak */
 @media (max-width: 640px) {
   .news-slide-item {
     width: calc(100% / 8);

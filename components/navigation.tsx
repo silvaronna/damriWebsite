@@ -1,11 +1,39 @@
 "use client"
 
+import React, { useState } from "react"
 import Image from "next/image"
 import { DropdownMenu } from "./dropdown-menu"
 import { useLanguage } from "@/context/language-context"
+import { ContactsModal } from "./ContactModal"
+import { contacts } from "@/lib/dataContact"
 
 export function Navigation() {
   const { t } = useLanguage()
+
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+// const contacts = [
+//   {
+//     name: "Cabang Banda Aceh",
+//     address: "Jln. Twk. Hasyim Bantamuda No.24, Banda Aceh",
+//     phone: "0651 635586",
+//     email: "cabang.aceh@damri.co.id",
+//   },
+//   {
+//     name: "Cabang Medan",
+//     address: "Jln. Raya Tg. Morawa Km. 10, Medan",
+//     phone: "061 7865466",
+//     email: "cabang.medan@damri.co.id",
+//   },
+//   {
+//     name: "Cabang Padang",
+//     address: "Jln. Parak Anau (Wisma Indah Parupuk), Padang",
+//     phone: "0751 7052137",
+//     email: "cabang.padang@damri.co.id",
+//   },
+//   // Tambahkan kontak lainnya sesuai kebutuhan...
+// ]
+
 
   const tentangKamiItems = [
     { label: t.about.companyProfile, href: "/tentang/profil" },
@@ -36,6 +64,7 @@ export function Navigation() {
   ]
 
   return (
+    <>
     <nav className="bg-white shadow-sm">
       <div className="max-w-[1400px] mx-auto px-6 sm:px-8 lg:px-12 xl:px-16">
         <div className="flex items-center justify-between py-6">
@@ -61,7 +90,28 @@ export function Navigation() {
             <DropdownMenu title={t.nav.services} items={segmentasiLayananItems} />
             <DropdownMenu title={t.nav.publications} items={publikasiItems} />
 
-            <a href="/kontak" className="text-nav text-gray-700 hover:text-damri-blue transition-colors">
+
+             <button
+                onClick={() => setIsModalOpen(true)}
+                className="text-nav text-gray-700 hover:text-damri-blue transition-colors cursor-pointer bg-transparent border-none"
+              >
+                {t.nav.contact}
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      <ContactsModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        contacts={contacts}
+      />
+   </>
+)
+}
+
+            /* <a href="/kontak" className="text-nav text-gray-700 hover:text-damri-blue transition-colors">
               {t.nav.contact}
             </a>
           </div>
@@ -69,4 +119,4 @@ export function Navigation() {
       </div>
     </nav>
   )
-}
+} */
