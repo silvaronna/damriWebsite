@@ -7,6 +7,7 @@ import type { ServiceItem, Destination, BookingData, ModalView } from '@/lib/typ
 import { useBodyScrollLock } from '@/hooks/useBodyScrollLock';
 import { BookingFormView } from './BookingForm';
 import { BookingConfirmationView } from './ConfirmationView';
+import Image from 'next/image';
 
 interface ServiceModalProps {
   service: ServiceItem;
@@ -20,17 +21,17 @@ const backdropVariants: Variants = {
 };
 
 const modalVariants: Variants = {
-  hidden: { opacity: 0, scale: 0.95 },
-  visible: { opacity: 1, scale: 1, transition: { duration: 0.3, ease: 'easeOut' } },
-  exit: { opacity: 0, scale: 0.95, transition: { duration: 0.2, ease: 'easeIn' } },
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.15, ease: 'linear' } },
+  exit: { opacity: 0, transition: { duration: 0.1, ease: 'linear' } },
 };
 
 const FacilityIcon = ({ icon: Icon, label }: { icon: React.ElementType, label: string }) => (
-  <div className="flex items-center gap-3 bg-gray-50 p-3 rounded-lg border border-gray-100">
-    <div className="bg-blue-100 p-2 rounded-full">
-      <Icon className="w-5 h-5 text-blue-600" />
+  <div className="flex items-center gap-3 bg-white p-3 rounded-xl border border-gray-200/80 shadow-sm">
+    <div className="bg-blue-100/70 p-2 rounded-lg">
+      <Icon className="w-5 h-5 text-blue-700" />
     </div>
-    <span className="text-sm font-medium text-gray-700">{label}</span>
+    <span className="text-sm font-semibold text-gray-800">{label}</span>
   </div>
 );
 
@@ -56,10 +57,10 @@ export const ServiceModal: React.FC<ServiceModalProps> = ({ service, onClose }) 
         return (
           <motion.div
             key="booking"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -50 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.15, ease: 'linear' }}
           >
             <BookingFormView service={service} onBack={() => setView('details')} onSubmit={handleBookingSubmit} />
           </motion.div>
@@ -69,10 +70,10 @@ export const ServiceModal: React.FC<ServiceModalProps> = ({ service, onClose }) 
         return (
           <motion.div
             key="confirmation"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.9 }}
-            transition={{ duration: 0.3, ease: 'easeInOut' }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.15, ease: 'linear' }}
           >
             <BookingConfirmationView service={service} bookingData={bookingInfo.data} destination={bookingInfo.destination} onBookAgain={resetFlow} />
           </motion.div>
@@ -85,7 +86,7 @@ export const ServiceModal: React.FC<ServiceModalProps> = ({ service, onClose }) 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.15, ease: 'linear' }}
             className="flex h-full flex-col"
           >
             <div>
@@ -96,26 +97,25 @@ export const ServiceModal: React.FC<ServiceModalProps> = ({ service, onClose }) 
                 {service.longDescription || service.description}
               </p>
               <div className="mb-8">
-                <h3 className="text-lg font-bold text-gray-800 mb-4">Fasilitas Termasuk</h3>
-                <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+                <h3 className="text-xl font-bold text-gray-800 mb-5">Fasilitas Perjalanan</h3>
+                <div className="grid grid-cols-2 gap-4">
                   {service.destinations[0]?.duration && (
                     <FacilityIcon icon={ClockIcon} label={`${service.destinations[0].duration} perjalanan`} />
                   )}
-                  <FacilityIcon icon={UsersIcon} label="Tempat Duduk Nyaman" />
-                  <FacilityIcon icon={WifiIcon} label="Air Conditioner" />
-                  <FacilityIcon icon={BoltIcon} label="USB Charger" />
+                  <FacilityIcon icon={UsersIcon} label="Kursi Nyaman" />
+                  <FacilityIcon icon={WifiIcon} label="AC & WiFi" />
+                  <FacilityIcon icon={BoltIcon} label="Charger USB" />
                 </div>
               </div>
             </div>
             <div className="mt-auto border-t border-gray-200/80 pt-8">
               <motion.button
                 onClick={() => setView('booking')}
-                className="w-full transform-gpu flex items-center justify-center gap-3 rounded-xl bg-blue-600 px-6 py-4 text-base font-bold text-white shadow-lg shadow-blue-500/20 transition-all duration-300 hover:-translate-y-1 hover:bg-blue-700"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                className="w-full flex items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-4 text-lg font-bold text-white shadow-md transition-all duration-150 hover:brightness-110 active:brightness-100"
+                whileTap={{ scale: 0.99 }}
               >
                 <span>Pesan Sekarang</span>
-                <ArrowRightIcon className="h-5 w-5" />
+                <ArrowRightIcon className="h-6 w-6" />
               </motion.button>
             </div>
           </motion.div>
@@ -148,7 +148,12 @@ export const ServiceModal: React.FC<ServiceModalProps> = ({ service, onClose }) 
         </button>
 
         <div className="relative h-64 w-full md:h-auto md:w-2/5">
-          <img src={service.image} alt={service.title} className="h-full w-full object-cover" />
+          <Image 
+            src={service.image} 
+            alt={service.title} 
+            fill
+            className="object-cover" 
+          />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
         </div>
 
