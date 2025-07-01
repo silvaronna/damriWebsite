@@ -39,3 +39,6 @@ npm run dev
   - Konfirmasi pemesanan yang informatif
   - Animasi dan transisi yang halus
   - Manajemen state yang efisien untuk pengalaman pengguna yang lancar
+3. Emerald Alphante Reirezqi
+- Membuat tampilan baru pada menu berita dengan Carousel
+- Membuat fitur pencarian pada kontak cabang DAMRI dan merubah tampilan kontak menjadi lebih minimalis
