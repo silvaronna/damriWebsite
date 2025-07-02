@@ -10,7 +10,7 @@ interface ContactsModalProps {
   contacts: Contact[]
 }
 
-const regionColors = {
+const regionColors: Record<string, string> = {
   "All": "from-gray-400 to-gray-600",
   "Regional I": "from-red-400 to-red-600",
   "Regional II": "from-blue-400 to-blue-600",
@@ -23,7 +23,7 @@ export function ContactsModal({ isOpen, onClose, contacts }: ContactsModalProps)
   const [searchQuery, setSearchQuery] = useState<string>("")
   const [isLoading, setIsLoading] = useState(false)
 
-  // Extract unique regions
+  // Extract unique regions plus "All"
   const regions = useMemo(() => ["All", ...Array.from(new Set(contacts.map(c => c.region)))], [contacts])
 
   // To simulate loading effect on region change
@@ -32,14 +32,13 @@ export function ContactsModal({ isOpen, onClose, contacts }: ContactsModalProps)
     setTimeout(() => {
       setFilterRegion(region)
       setIsLoading(false)
-    }, 250) 
+    }, 250)
   }
 
   // Filter contacts by region
   const filteredByRegion = useMemo(() => {
-    return filterRegion === "All"
-      ? contacts
-      : contacts.filter(c => c.region === filterRegion)
+    if (filterRegion === "All") return contacts
+    return contacts.filter(c => c.region === filterRegion)
   }, [contacts, filterRegion])
 
   // Filter contacts by search query
@@ -84,9 +83,7 @@ export function ContactsModal({ isOpen, onClose, contacts }: ContactsModalProps)
           <h2 className="text-4xl font-extrabold bg-gradient-to-r from-blue-600 to-indigo-700 bg-clip-text text-transparent drop-shadow-sm">
             Kantor Cabang DAMRI
           </h2>
-          <p
-            className={`mt-4 text-lg font-semibold text-gray-700 drop-shadow-md transition-all select-text`}
-          >
+          <p className="mt-4 text-lg font-semibold text-gray-700 drop-shadow-md transition-all select-text">
             {filterRegion === "All"
               ? `Menampilkan semua kontak (${contacts.length})`
               : `Menampilkan kontak di ${filterRegion} (${filteredByRegion.length})`}
@@ -94,27 +91,31 @@ export function ContactsModal({ isOpen, onClose, contacts }: ContactsModalProps)
         </header>
 
         <nav className="flex flex-wrap justify-center gap-5 p-6 border-t border-white/30 bg-white/40 backdrop-blur-md">
-          {regions.map(region => (
-           <motion.button
+          {regions.map(region => {
+            const isActive = filterRegion === region
+            const gradientClass = regionColors[region] ?? "from-blue-500 to-indigo-600"
+            return (
+              <motion.button
                 key={region}
                 onClick={() => onChangeRegion(region)}
                 whileHover={{ scale: 1.08 }}
                 whileTap={{ scale: 0.95 }}
                 className={`relative px-7 py-3 rounded-full font-semibold text-sm cursor-pointer transition-all 
-                    ${filterRegion === region 
-                    ? `bg-gradient-to-r ${regionColors[region] ?? "from-blue-500 to-indigo-600"} text-white shadow-xl border-2 border-white`
-                    : `bg-white/70 text-gray-700 hover:bg-gradient-to-r hover:from-blue-400 hover:to-indigo-500 hover:text-white shadow-md`}`}
-                >
+                  ${isActive 
+                    ? `bg-gradient-to-r ${gradientClass} text-white shadow-xl border-2 border-white`
+                    : `bg-white/70 text-gray-700 hover:bg-gradient-to-r hover:from-blue-400 hover:to-indigo-500 hover:text-white shadow-md`
+                  }`}
+              >
                 {region}
-                {filterRegion === region && (
-                    <span
+                {isActive && (
+                  <span
                     aria-hidden="true"
                     className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 h-1.5 w-10 rounded-full bg-indigo-700 shadow-md"
-                    ></span>
+                  />
                 )}
-            </motion.button>
-
-          ))}
+              </motion.button>
+            )
+          })}
         </nav>
 
         <div className="p-6 border-b border-white/30 bg-white/60 backdrop-blur-md flex justify-center">
@@ -182,10 +183,10 @@ export function ContactsModal({ isOpen, onClose, contacts }: ContactsModalProps)
                     <p className="text-gray-700 text-sm font-medium leading-relaxed mb-1 select-text"><span className="font-semibold">Alamat:</span> {contact.address}</p>
                     <p className="text-gray-700 text-sm mb-1 select-text"><span className="font-semibold">Telepon:</span> {contact.phone}</p>
                     <p className="text-gray-700 text-sm select-text"><span className="font-semibold">Email:</span> {contact.email}</p>
-                    {/* small animated gradient bar bottom */}
-                    <motion.span
-                      layoutId={`underline-${contact.email}`}
-                      className="absolute bottom-4 left-6 h-1 w-10 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500"
+                    {/* Animated gradient bar bottom */}
+                    <span
+                      aria-hidden="true"
+                      className={`block absolute bottom-0 left-0 h-1.5 rounded-b-2xl w-full bg-gradient-to-r ${regionColors[contact.region] ?? "from-blue-500 to-indigo-600"}`}
                     />
                   </motion.li>
                 ))}
@@ -194,20 +195,6 @@ export function ContactsModal({ isOpen, onClose, contacts }: ContactsModalProps)
           </AnimatePresence>
         </section>
       </motion.div>
-
-      <style jsx>{`
-        /* Scrollbar custom for modern look */
-        ::-webkit-scrollbar {
-          width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-          background: transparent;
-        }
-        ::-webkit-scrollbar-thumb {
-          background-color: #6366f1;
-          border-radius: 20px;
-        }
-      `}</style>
     </motion.div>
   )
 }
