@@ -13,8 +13,8 @@ export function Navigation() {
   const [isModalOpen, setIsModalOpen] = useState(false)
 
   const tentangKamiItems = [
-    { label: t.about.companyProfile, href: "/tentang/profil" },
-    { label: t.about.visionMission, href: "/tentang/visi-misi" },
+    { label: t.about.companyProfile, href: "/about-us/company-profile" },
+    { label: t.about.visionMission, href: "/about-us/vision-mission" },
     { label: t.about.history, href: "/tentang/sejarah" },
     { label: t.about.organization, href: "/tentang/struktur" },
     { label: t.about.directors, href: "/tentang/direksi" },
