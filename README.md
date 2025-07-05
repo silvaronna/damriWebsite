@@ -37,3 +37,6 @@ npm run dev
 3. Emerald Alphante Reirezqi
 - Created a new news menu display with Carousel
 - Implemented search feature for DAMRI branch contacts and redesigned the contact display to be more minimalistic
+4. Andini Prihartiningtias
+- Redesigned company profile & mission vision pages with hero carousel and informative cards
+- Built an interactive testimonial module with client-side form, API POST/GET, and user feedback confirmation
